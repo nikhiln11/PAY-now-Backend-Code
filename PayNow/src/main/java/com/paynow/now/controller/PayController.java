@@ -39,6 +39,11 @@ public class PayController {
  {
 	 return myService.getAllBIC();
  }
+ @RequestMapping("/all/trans")
+ public List<Transaction> showAllTrans()
+ {
+	 return myService.getAllTrans();
+ }
  @RequestMapping("/home")
  public String helloHome() {
 
@@ -62,5 +67,12 @@ public class PayController {
  {
 	 Transaction t = myService.sendMoney(b);
 	 return t;
+ }
+ @GetMapping("/sdnsearch")
+ public boolean sdnSearch(@RequestParam String c)
+ {
+	Boolean b= myService.checkSdn(c);
+	 return b;
+	 
  }
 }

@@ -1,8 +1,12 @@
 package com.paynow.now.service;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Scanner;
 
+import org.apache.commons.lang3.text.WordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -70,6 +74,28 @@ public class PayService {
 	}
 		
 		
+	}
+	public List<Transaction> getAllTrans() {
+		// TODO Auto-generated method stub
+		List<Transaction> t = tRepo.findAll();
+		return t;
+		
+	}
+	public boolean checkSdn(String c) {
+		File file = new File("C:/Users/Administrator/Downloads/sdnlist.txt");
+		boolean isFound=false;
+		try {
+		    Scanner scanner = new Scanner(file);
+		    while (scanner.hasNextLine() && !isFound) {
+		        String line = scanner.nextLine();
+		        isFound=line.contains(c.toUpperCase());
+		        isFound=line.contains(WordUtils.capitalizeFully(c));
+		    }
+		} catch(FileNotFoundException e) { 
+			System.out.println("Error opening the file"+e);
+		    
+		}
+		return isFound;
 	}
 	
 
