@@ -1,0 +1,8 @@
+insert into student(id,college_name,marks,name) values(123,"GRIT",34,"Name1");
+insert into student(id,college_name,marks,name) values(124,"GRIET",90,"Name2");
+insert into student(id,college_name,marks,name) values(125,"CBIT",96,"Name3");
+insert into student(id,college_name,marks,name) values(126,"MBU",100,"Name4");
+select * from student;
+desc student;
+ALTER TABLE student DROP PRIMARY KEY;
+alter table student modify column id INT NOT NULL AUTO_INCREMENT;

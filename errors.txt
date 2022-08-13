@@ -1,0 +1,46 @@
+Spring Doubts:
+1.When Security is added to spring, Angular is unable to Send requests to the spring app with security as access is required to send request to spring.
+												|--> how to give access to angular with spring security? 
+
+
+
+
+Angular Errors and Doubts:
+
+1. About the spring returning the object but not specific obj like sender or acccount obj
+2. Error is not raising in angular subscribed component even when the backend is returning null object. But if the back end is set to not return anything on not finding object, it is returning error but not working after that and not giving proper object returns to angular even when there is a hit.
+3. Authentication gaurd service not working properly
+4. Sender object creation throwing errors saying that object might be null and not initialised yet when tried to use these object values to write code.
+	|--->Is there a way to initialise an object to some value to avoid these errors?
+		|--> especially showing errors in transaction component!
+	
+	||--{}-> As the return object from spring is only type "Object" , it can't be assigned to a specific type object such as Sender(;{), So the object declared in angular was set as any to accept the object from spring.
+		|-->how to solve this?
+
+
+-->>>Send only Sender details and amount to be deducted from sender to backend and get two types of objects as return from back end
+												|->Payment status Success and Transaction details
+												|->Payment Staus Failure and return error object
+-->> Code for amount available checking and payment status,transaction details returning to angular, creating a new transaction row to the table in db
+	to be done on spring side.
+
+Transaction Table:
+TransactionID
+SenderName
+ReceiverName
+Message Code
+SenderID
+AmountSent
+PaymentStatus
+Payment Time
+
+
+After Transaction Status Component to be shown to user:
+Payment Status
+Balance of Sender Remaining
+Transaction fee(Not certain if this has to be shown)
+Transaction Details
+Continue button
+	|--> to take user to home page
+				|-->contains Transaction history,top 5 transactions,User details(not certain as this is a employee app),Successful and 					failed transactions.
+
